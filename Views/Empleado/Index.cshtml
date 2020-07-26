@@ -1,0 +1,81 @@
+@model List<Empleado>
+@{
+    ViewBag.title = "Index empleados";
+}
+
+<div class="container">
+    <h1 class="text-center">@ViewBag.title</h1>
+    <table class="table table-dark table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Fecha Ingreso
+                </th>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Apellido
+                </th>
+                <th>
+                    Tipo Doc
+                </th>
+                <th>
+                    Nro Doc
+                </th>
+                <th>
+                    Fecha Nacimiento
+                </th>
+                <th>
+                    Departamento
+                </th>
+                <th>
+                    Sucursal
+                </th>
+                <th>
+                    Salario
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var empl in Model)
+            {
+                <tr>
+                    <th>
+                        @empl.Id
+                    </th>
+                    <th>
+                        @empl.FechaIngreso
+                    </th>
+                    <th>
+                        @empl.Nombre
+                    </th>
+                    <th>
+                        @empl.Apellido
+                    </th>
+                    <th>
+                        @empl.TipoDoc
+                    </th>
+                    <th>
+                        @empl.NroDoc
+                    </th>
+                    <th>
+                        @empl.FecNac.ToShortDateString() - @(@System.DateTime.Today.Year - @empl.FecNac.Year) años
+                    </th>
+                    <th>
+                        @empl.Departamento.Nombre
+                    </th>
+                    <th>
+                        @empl.Sucursal.Nombre
+                    </th>
+                    <th>
+                        @empl.Salario
+                    </th>
+                </tr>
+            }   
+        </tbody>
+    </table>
+</div>

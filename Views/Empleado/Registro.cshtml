@@ -1,0 +1,71 @@
+@model La_Pirana_Ejemplo.Models.Empleado;
+@{
+    ViewBag.title = "Registro empleado";
+}
+<div class="container">
+    <h1 class="text-center">@ViewBag.title</h1>
+    <form action="" method="post">
+        <div asp-validation-summary="All"></div>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="Nombre"></label>
+                    <input asp-for="Nombre" class="form-control">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="Apellido"></label>
+                    <input asp-for="Apellido" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="TipoDoc"></label>
+                    <select asp-for="TipoDoc" class="form-control">
+                        <option value="Dni">Dni</option>
+                        <option value="Cne">Cne</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="NroDoc"></label>
+                    <input type="number" asp-for="NroDoc" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="Departamento"></label>
+                    <select asp-for="DepartamentoId" asp-items="ViewBag.Departamento" class="form-control"></select>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="FecNac"></label>
+                    <input asp-for="FecNac" class="form-control">
+                    <span asp-validation-for="FecNac"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="Sucursal"></label>
+                    <select asp-for="SucursalId" asp-items="ViewBag.Sucursal" class="form-control"></select>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="Salario"></label>
+                    <input asp-for="Salario" class="form-control">
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-warning">Registrar</button>
+    </form>
+</div>

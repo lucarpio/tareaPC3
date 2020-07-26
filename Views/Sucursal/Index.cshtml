@@ -1,0 +1,38 @@
+@model List<Sucursal>
+@{
+    ViewBag.title = "Index Sucursales";
+}
+<div class="container">
+    <h1 class="text-center">@ViewBag.title</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Direccion
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var suc in Model)
+            {
+                <tr>
+                    <th>
+                        @suc.Id
+                    </th>
+                    <th>
+                        @suc.Nombre
+                    </th>
+                    <th>
+                        @suc.Direccion
+                    </th>
+                </tr>
+            }   
+        </tbody>
+    </table>
+</div>
